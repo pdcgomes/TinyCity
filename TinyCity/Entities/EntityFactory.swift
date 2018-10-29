@@ -37,7 +37,11 @@ class UnitFactory {
         node.fillColor = .red
         node.strokeColor = .green
 
-        entity.addComponent(GKSKNodeComponent(node: node))
+        let visual = GKSKNodeComponent(node: node)
+        let selectable = SelectableComponent(node: visual)
+        
+        entity.addComponent(visual)
+        entity.addComponent(selectable)
 
         return .soldier(entity: entity)
     }
