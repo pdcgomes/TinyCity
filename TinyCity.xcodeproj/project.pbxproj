@@ -18,6 +18,7 @@
 		424631DA2183508A00D2E083 /* CGExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424631D92183508A00D2E083 /* CGExtensions.swift */; };
 		424631DD218360AE00D2E083 /* UnitSelectionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424631DC218360AE00D2E083 /* UnitSelectionLayer.swift */; };
 		424631DF2183B2B100D2E083 /* UnitSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424631DE2183B2B100D2E083 /* UnitSelection.swift */; };
+		424631E12187B0BE00D2E083 /* EntityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424631E02187B0BD00D2E083 /* EntityFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		424631D92183508A00D2E083 /* CGExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGExtensions.swift; sourceTree = "<group>"; };
 		424631DC218360AE00D2E083 /* UnitSelectionLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSelectionLayer.swift; sourceTree = "<group>"; };
 		424631DE2183B2B100D2E083 /* UnitSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSelection.swift; sourceTree = "<group>"; };
+		424631E02187B0BD00D2E083 /* EntityFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +95,7 @@
 				424631D72183444000D2E083 /* Controls */,
 				424631D62183441700D2E083 /* Scenes */,
 				424631D52183440900D2E083 /* Sim */,
-				424631D2218343D500D2E083 /* Units */,
+				424631D2218343D500D2E083 /* Entities */,
 				424631D4218343F900D2E083 /* World */,
 				424631B22183436000D2E083 /* Actions.sks */,
 				424631AE2183436000D2E083 /* AppDelegate.swift */,
@@ -115,11 +117,12 @@
 			path = TinyCityTests;
 			sourceTree = "<group>";
 		};
-		424631D2218343D500D2E083 /* Units */ = {
+		424631D2218343D500D2E083 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				424631E02187B0BD00D2E083 /* EntityFactory.swift */,
 			);
-			path = Units;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		424631D4218343F900D2E083 /* World */ = {
@@ -276,6 +279,7 @@
 				424631B52183436000D2E083 /* GameScene.swift in Sources */,
 				424631DD218360AE00D2E083 /* UnitSelectionLayer.swift in Sources */,
 				424631AF2183436000D2E083 /* AppDelegate.swift in Sources */,
+				424631E12187B0BE00D2E083 /* EntityFactory.swift in Sources */,
 				424631DA2183508A00D2E083 /* CGExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
