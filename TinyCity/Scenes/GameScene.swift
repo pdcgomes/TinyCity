@@ -79,16 +79,17 @@ class GameScene: SKScene {
         var dots = [SKNode]()
         let radius = CGFloat(10)
         for _ in 1...10 {
-            let dot = SKShapeNode(circleOfRadius: radius)
-            dot.userData = NSMutableDictionary()
-            dot.name = "dot"
-            dot.lineWidth = 2.5
-            dot.fillColor = SKColor.red
-            dot.strokeColor = SKColor.green
-            dot.position = CGPoint.random(constraintedTo: self.frame.insetBy(dx: radius, dy: radius))
-            addChild(dot)
             
-            dots.append(dot)
+            if case .soldier(let entity) = UnitFactory.build(.soldier) {
+                let component = entity.component(ofType: GKSKNodeComponent.self)!
+                
+                let position = CGPoint.random(constraintedTo: self.frame.insetBy(dx: radius, dy: radius))
+                component.node.position = position
+                
+                addChild(component.node)
+                dots.append(component.node)
+                self.entities.append(entity)
+            }
         }
         
         for dot in dots {
