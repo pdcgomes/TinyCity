@@ -19,6 +19,7 @@
 		424631DD218360AE00D2E083 /* UnitSelectionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424631DC218360AE00D2E083 /* UnitSelectionLayer.swift */; };
 		424631DF2183B2B100D2E083 /* UnitSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424631DE2183B2B100D2E083 /* UnitSelection.swift */; };
 		424631E12187B0BE00D2E083 /* EntityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424631E02187B0BD00D2E083 /* EntityFactory.swift */; };
+		424631E42187B71D00D2E083 /* SelectableComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424631E32187B71D00D2E083 /* SelectableComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		424631DC218360AE00D2E083 /* UnitSelectionLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSelectionLayer.swift; sourceTree = "<group>"; };
 		424631DE2183B2B100D2E083 /* UnitSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSelection.swift; sourceTree = "<group>"; };
 		424631E02187B0BD00D2E083 /* EntityFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityFactory.swift; sourceTree = "<group>"; };
+		424631E32187B71D00D2E083 /* SelectableComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		424631D2218343D500D2E083 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				424631E22187B6FF00D2E083 /* Components */,
 				424631E02187B0BD00D2E083 /* EntityFactory.swift */,
 			);
 			path = Entities;
@@ -170,6 +173,14 @@
 				424631DE2183B2B100D2E083 /* UnitSelection.swift */,
 			);
 			path = HUD;
+			sourceTree = "<group>";
+		};
+		424631E22187B6FF00D2E083 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				424631E32187B71D00D2E083 /* SelectableComponent.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 				424631DF2183B2B100D2E083 /* UnitSelection.swift in Sources */,
 				424631B72183436000D2E083 /* ViewController.swift in Sources */,
 				424631B52183436000D2E083 /* GameScene.swift in Sources */,
+				424631E42187B71D00D2E083 /* SelectableComponent.swift in Sources */,
 				424631DD218360AE00D2E083 /* UnitSelectionLayer.swift in Sources */,
 				424631AF2183436000D2E083 /* AppDelegate.swift in Sources */,
 				424631E12187B0BE00D2E083 /* EntityFactory.swift in Sources */,
