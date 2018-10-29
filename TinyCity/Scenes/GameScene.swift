@@ -9,25 +9,6 @@
 import SpriteKit
 import GameplayKit
 
-extension SKNode: Selectable {
-    @objc func select() {}
-    @objc func deselect() {}
-}
-
-extension SKShapeNode {
-    @objc override func select() {
-        if let info = self.userData, info["fillColor"] == nil  {
-            info["fillColor"] = self.fillColor
-        }
-        self.fillColor = .green
-    }
-    
-    @objc override func deselect() {
-        if let info = self.userData, let fillColor = info["fillColor"] as? SKColor {
-            self.fillColor = fillColor
-        }
-    }
-}
 
 extension GameScene: UnitSelectionLayerListener {
 
