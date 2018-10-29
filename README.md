@@ -1,2 +1,2 @@
 # TinyCity
-Random experiments - stay at your peril 🧟‍♂️🧟‍♀️
+Random experiments - stay at your own peril 🧟‍♂️🧟‍♀️
