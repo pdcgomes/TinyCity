@@ -24,7 +24,6 @@ class ViewController: NSViewController {
         // including entities and graphs.
         
         // Copy gameplay related content over to the scene
-        sceneNode.entities = scene.entities
         sceneNode.graphs = scene.graphs
         sceneNode.scaleMode = .aspectFill
         

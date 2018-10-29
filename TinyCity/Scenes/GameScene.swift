@@ -9,7 +9,13 @@
 import SpriteKit
 import GameplayKit
 
-
+class SelectableComponentSearcher {
+    static func find(in entities: [GKEntity]) -> [SelectableComponent] {
+        return entities.compactMap {
+            $0.component(ofType: SelectableComponent.self)
+        }
+    }
+}
 extension GameScene: UnitSelectionLayerListener {
 
     func unitSelectorStarted() {
@@ -17,17 +23,19 @@ extension GameScene: UnitSelectionLayerListener {
     }
     
     func unitSelector(_: UnitSelectionLayer, updatedTo region: SKRegion) {
-        var selection = [SKNode]()
-        
-        self.enumerateChildNodes(withName: "dot") { (node, _) in
+        let selectables = SelectableComponentSearcher.find(in: self.entities)
+
+        var selection = [SelectableComponent]()
+        for selectable in selectables {
+            let node = selectable.node
+
             if     region.contains(node.frame.a)
                 || region.contains(node.frame.b)
                 || region.contains(node.frame.c)
                 || region.contains(node.frame.d) {
-                selection.append(node)
+                selection.append(selectable)
             }
         }
-
         self.unitSelection.select(units: selection)
     }
     
@@ -40,7 +48,7 @@ class GameScene: SKScene {
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
-    let unitSelection = UnitSelection<SKNode>()
+    let unitSelection = UnitSelection<SelectableComponent>()
     
     private var lastUpdateTime : TimeInterval = 0
     
