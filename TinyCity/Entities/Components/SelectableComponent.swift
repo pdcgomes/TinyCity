@@ -28,7 +28,7 @@ extension SKShapeNode {
     }
 }
 
-class SelectableComponent: GKComponent {
+class SelectableComponent: GKComponent, Selectable {
     
     let nodeComponent: GKSKNodeComponent
     var node: SKNode {
@@ -48,12 +48,12 @@ class SelectableComponent: GKComponent {
     
     func select() {
         self.selected = true
-        self.nodeComponent.node.select()
+        self.node.select()
     }
     
     func deselect() {
         self.selected = false
-        self.nodeComponent.node.deselect()
+        self.node.deselect()
     }
     
 }
