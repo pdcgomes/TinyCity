@@ -41,10 +41,14 @@ class UnitFactory {
         node.strokeColor = .green
 
         let visual = GKSKNodeComponent(node: node)
-        let selectable = SelectableComponent(node: visual)
+        let selectable = SelectionComponent(node: visual)
+        let movement = GKAgent2D()
+        
+        movement.delegate = visual
         
         entity.addComponent(visual)
         entity.addComponent(selectable)
+        entity.addComponent(movement)
 
         return .soldier(entity: entity)
     }
