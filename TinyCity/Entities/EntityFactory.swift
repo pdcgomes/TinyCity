@@ -12,6 +12,8 @@ import SpriteKit
 
 enum UnitType {
     case soldier
+    case tank
+    case jeep
 }
 
 enum Unit {
@@ -21,9 +23,10 @@ enum Unit {
 class UnitFactory {
     
     static func build(_ type: UnitType) -> Unit {
-        switch type {
-        case .soldier: return buildSoldier()
+        if case .soldier = type  {
+            return buildSoldier()
         }
+        fatalError("Unit Type \(type) not supported yet")
     }
     
     private static func buildSoldier() -> Unit {
