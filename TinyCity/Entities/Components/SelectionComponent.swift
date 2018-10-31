@@ -28,7 +28,7 @@ extension SKShapeNode {
     }
 }
 
-class SelectableComponent: GKComponent, Selectable {
+class SelectionComponent: GKComponent, Selectable {
     
     let nodeComponent: GKSKNodeComponent
     var node: SKNode {

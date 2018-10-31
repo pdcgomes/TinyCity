@@ -16,10 +16,11 @@
 		424631BC2183436100D2E083 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 424631BA2183436100D2E083 /* Main.storyboard */; };
 		424631C82183436100D2E083 /* TinyCityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424631C72183436100D2E083 /* TinyCityTests.swift */; };
 		424631DA2183508A00D2E083 /* CGExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424631D92183508A00D2E083 /* CGExtensions.swift */; };
-		424631DD218360AE00D2E083 /* UnitSelectionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424631DC218360AE00D2E083 /* UnitSelectionLayer.swift */; };
 		424631DF2183B2B100D2E083 /* UnitSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424631DE2183B2B100D2E083 /* UnitSelection.swift */; };
 		424631E12187B0BE00D2E083 /* EntityFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424631E02187B0BD00D2E083 /* EntityFactory.swift */; };
-		424631E42187B71D00D2E083 /* SelectableComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424631E32187B71D00D2E083 /* SelectableComponent.swift */; };
+		424631E42187B71D00D2E083 /* SelectionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424631E32187B71D00D2E083 /* SelectionComponent.swift */; };
+		424631E62189088800D2E083 /* UnitSelectionLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424631E52189088800D2E083 /* UnitSelectionLayer.swift */; };
+		424631EA218A54BA00D2E083 /* UserInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424631E9218A54BA00D2E083 /* UserInputController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,10 +48,11 @@
 		424631C72183436100D2E083 /* TinyCityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyCityTests.swift; sourceTree = "<group>"; };
 		424631C92183436100D2E083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		424631D92183508A00D2E083 /* CGExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGExtensions.swift; sourceTree = "<group>"; };
-		424631DC218360AE00D2E083 /* UnitSelectionLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSelectionLayer.swift; sourceTree = "<group>"; };
 		424631DE2183B2B100D2E083 /* UnitSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSelection.swift; sourceTree = "<group>"; };
 		424631E02187B0BD00D2E083 /* EntityFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityFactory.swift; sourceTree = "<group>"; };
-		424631E32187B71D00D2E083 /* SelectableComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableComponent.swift; sourceTree = "<group>"; };
+		424631E32187B71D00D2E083 /* SelectionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionComponent.swift; sourceTree = "<group>"; };
+		424631E52189088800D2E083 /* UnitSelectionLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitSelectionLayer.swift; sourceTree = "<group>"; };
+		424631E9218A54BA00D2E083 /* UserInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		424631D72183444000D2E083 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				424631E9218A54BA00D2E083 /* UserInputController.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -169,7 +172,7 @@
 		424631DB2183608400D2E083 /* HUD */ = {
 			isa = PBXGroup;
 			children = (
-				424631DC218360AE00D2E083 /* UnitSelectionLayer.swift */,
+				424631E52189088800D2E083 /* UnitSelectionLayer.swift */,
 				424631DE2183B2B100D2E083 /* UnitSelection.swift */,
 			);
 			path = HUD;
@@ -178,7 +181,7 @@
 		424631E22187B6FF00D2E083 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				424631E32187B71D00D2E083 /* SelectableComponent.swift */,
+				424631E32187B71D00D2E083 /* SelectionComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -288,8 +291,9 @@
 				424631DF2183B2B100D2E083 /* UnitSelection.swift in Sources */,
 				424631B72183436000D2E083 /* ViewController.swift in Sources */,
 				424631B52183436000D2E083 /* GameScene.swift in Sources */,
-				424631E42187B71D00D2E083 /* SelectableComponent.swift in Sources */,
-				424631DD218360AE00D2E083 /* UnitSelectionLayer.swift in Sources */,
+				424631E42187B71D00D2E083 /* SelectionComponent.swift in Sources */,
+				424631EA218A54BA00D2E083 /* UserInputController.swift in Sources */,
+				424631E62189088800D2E083 /* UnitSelectionLayer.swift in Sources */,
 				424631AF2183436000D2E083 /* AppDelegate.swift in Sources */,
 				424631E12187B0BE00D2E083 /* EntityFactory.swift in Sources */,
 				424631DA2183508A00D2E083 /* CGExtensions.swift in Sources */,

@@ -10,22 +10,22 @@ import SpriteKit
 import GameplayKit
 
 class SelectableComponentSearcher {
-    static func find(in entities: [GKEntity]) -> [SelectableComponent] {
+    static func find(in entities: [GKEntity]) -> [SelectionComponent] {
         return entities.compactMap {
-            $0.component(ofType: SelectableComponent.self)
+            $0.component(ofType: SelectionComponent.self)
         }
     }
 }
-extension GameScene: UnitSelectionLayerListener {
+extension GameScene: UnitSelectionAreaListener {
 
-    func unitSelectorStarted() {
+    func unitSelectionStarted() {
         self.unitSelection.reset()
     }
     
-    func unitSelector(_: UnitSelectionLayer, updatedTo region: SKRegion) {
+    func unitSelection(_: UnitSelectionArea, updatedTo region: SKRegion) {
         let selectables = SelectableComponentSearcher.find(in: self.entities)
 
-        var selection = [SelectableComponent]()
+        var selection = [SelectionComponent]()
         for selectable in selectables {
             let node = selectable.node
 
@@ -39,7 +39,7 @@ extension GameScene: UnitSelectionLayerListener {
         self.unitSelection.select(units: selection)
     }
     
-    func unitSelectorCompleted() {
+    func unitSelectionFinished() {
     }
 }
 
@@ -48,11 +48,11 @@ class GameScene: SKScene {
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
-    let unitSelection = UnitSelection<SelectableComponent>()
+    let unitSelection = UnitSelection<SelectionComponent>()
     
     private var lastUpdateTime : TimeInterval = 0
     
-    private var hud: UnitSelectionLayer?
+    private var hud: UnitSelectionArea?
     
     override func sceneDidLoad() {
         
@@ -100,7 +100,7 @@ class GameScene: SKScene {
     }
     
     func setupHud() {
-        let hud = UnitSelectionLayer()
+        let hud = UnitSelectionArea()
         
         addChild(hud)
 
