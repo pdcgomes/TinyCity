@@ -95,7 +95,7 @@ class GameScene: SKScene {
                 SKAction.wait(forDuration: 2, withRange: 0.2),
                 SKAction.fadeAlpha(to: 0.5, duration: 0.3)])
             
-            dot.run(SKAction.repeatForever(moveSequence))
+            dot.run(SKAction.repeatForever(moveSequence), withKey: "RandomMotionAnimation")
         }
     }
     
@@ -115,12 +115,7 @@ class GameScene: SKScene {
     func touchMoved(toPoint pos : CGPoint)  {}
     func touchUp(atPoint pos : CGPoint)     {}
     
-    override func mouseDown(with event: NSEvent) {
-        let point = event.location(in: self)
-
-        self.touchDown(atPoint: point)
-        self.hud?.start(at: point)
-    }
+    override func mouseDown(with event: NSEvent) {}
     
     override func mouseDragged(with event: NSEvent) {
         let point = event.location(in: self)
@@ -138,10 +133,14 @@ class GameScene: SKScene {
     }
     
     override func keyDown(with event: NSEvent) {
+        print("keyDown: \(event.characters!) keyCode: \(event.keyCode)")
+
         switch event.keyCode {
         case 0x31: break
-        default:
-            print("keyDown: \(event.characters!) keyCode: \(event.keyCode)")
+        case 53:
+            self.unitSelection.reset()
+            break
+        default: break
         }
     }
 
