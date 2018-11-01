@@ -43,12 +43,14 @@ class UnitFactory {
         let visual = GKSKNodeComponent(node: node)
         let selectable = SelectionComponent(node: visual)
         let movement = GKAgent2D()
+        let receiver = UnitOrderReceiverComponent()
         
         movement.delegate = visual
         
         entity.addComponent(visual)
         entity.addComponent(selectable)
         entity.addComponent(movement)
+        entity.addComponent(receiver)
 
         return .soldier(entity: entity)
     }
