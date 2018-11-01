@@ -27,6 +27,17 @@ class UnitOrderDispatcher {
     
     func dispatch(order: UnitOrder, to units: [Unit]) {
         
+        for unit in units {
+            if case .soldier(let entity) = unit {
+                dispatch(order: order, to: entity)
+            }
+        }
+    }
+    
+    private func dispatch(order: UnitOrder, to entity: GKEntity) {
+        if let receiver = entity.component(ofType: UnitOrderReceiverComponent.self) {
+            _ = receiver.accept(order: order)
+        }
     }
     
 }
