@@ -14,7 +14,7 @@ protocol Selectable: Hashable {
 }
 
 class UnitSelection<UnitType: Selectable> {
-    private var selection = Set<UnitType>()
+    private(set) var selection = Set<UnitType>()
     
     func select(unit: UnitType) {
         self.selection.insert(unit)
