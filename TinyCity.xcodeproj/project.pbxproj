@@ -161,6 +161,8 @@
 		424631D72183444000D2E083 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				424631F221939C2D00D2E083 /* Mouse */,
+				424631F121939C2700D2E083 /* Keyboard */,
 				424631E9218A54BA00D2E083 /* UserInputController.swift */,
 			);
 			path = Controls;
@@ -198,6 +200,20 @@
 				424631EC218A5D9F00D2E083 /* UnitOrderDispatcher.swift */,
 			);
 			path = Orders;
+			sourceTree = "<group>";
+		};
+		424631F121939C2700D2E083 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		424631F221939C2D00D2E083 /* Mouse */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mouse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
