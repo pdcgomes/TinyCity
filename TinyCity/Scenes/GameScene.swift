@@ -49,6 +49,10 @@ class GameScene: SKScene {
     var graphs = [String : GKGraph]()
     
     let unitSelection = UnitSelection<SelectionComponent>()
+    let orderDispatcher = UnitOrderDispatcher()
+    let controls = UserInputController()
+    
+    var scale = CGFloat(10)
     
     private var lastUpdateTime : TimeInterval = 0
     
@@ -58,11 +62,22 @@ class GameScene: SKScene {
         
         self.lastUpdateTime = 0
         
+        setupCamera()
         setupDots()
         setupHud()
     }
 
     // MARK: - Setup
+    
+    func setupCamera() {
+        let camera = SKCameraNode()
+
+        camera.setScale(-1.0/self.scale)
+
+        addChild(camera)
+        
+        self.camera = camera
+    }
     
     func setupDots() {
         var dots = [SKNode]()
@@ -130,9 +145,16 @@ class GameScene: SKScene {
 
         self.touchUp(atPoint: point)
         self.hud?.stop(at: point)
+        
+        let units = self.unitSelection.selection.compactMap {
+            Unit.soldier(entity: $0.entity!)
+        }
+        self.orderDispatcher.dispatch(order: .moveTo(point), to: units)
     }
     
     override func keyDown(with event: NSEvent) {
+        self.controls.keyDown(with: event)
+        
         print("keyDown: \(event.characters!) keyCode: \(event.keyCode)")
 
         switch event.keyCode {
@@ -140,6 +162,16 @@ class GameScene: SKScene {
         case 53:
             self.unitSelection.reset()
             break
+        default: break
+        }
+        
+        guard let chars = event.characters else {
+            return
+        }
+        
+        switch chars {
+        case "+": cameraZoomIn()
+        case "-": cameraZoomOut()
         default: break
         }
     }
@@ -163,5 +195,15 @@ class GameScene: SKScene {
         }
         
         self.lastUpdateTime = currentTime
+    }
+    
+    func cameraZoomIn() {
+        self.scale += 1
+        self.camera!.setScale(-1.0/self.scale)
+    }
+    
+    func cameraZoomOut() {
+        self.scale -= 1
+        self.camera?.setScale(-1.0/self.scale)
     }
 }
